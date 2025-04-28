@@ -1,125 +1,253 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Museo del Louvre</title>
-  <link rel="stylesheet" href="estilos.css">
+  
+  <link rel="stylesheet" href="estilos.css" />
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Iconos Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-  <!-- Header superior -->
-  <header class="top-header">
-    <div class="top-bar">
-      <input type="text" placeholder="Buscar">
-      <span>Español</span>
+
+  <!-- Header -->
+  <header>
+    <!-- Topbar: Buscador y selector de idioma -->
+    <div class="topbar">
+      <div class="left">
+        <a href="#" class="search"><i class="fas fa-search"></i> Buscar</a>
+      </div>
+      <div class="right">
+        <select class="language-selector">
+          <option>Español</option>
+          <option>Français</option>
+          <option>English</option>
+        </select>
+      </div>
     </div>
-    <div class="main-header">
-      <h1>Louvre</h1>
-      <nav class="nav">
+
+    <!-- Menú principal -->
+    <div class="header-main">
+      <div class="logo">L O U V R E</div>
+      <nav class="nav-menu">
         <a href="#">Visita</a>
-        <a href="#">Exposiciones y eventos</a>
+        <a href="#">Exposiciones y Eventos</a>
         <a href="#">Explora</a>
         <a href="#">Ver más</a>
       </nav>
-      <div class="btn-group">
-        <button>Tienda online</button>
-        <button>Entradas</button>
+      <div class="header-buttons">
+        <a href="#" class="btn-outline small">🛒 Tienda online</a>
+        <a href="#" class="btn small">Entradas</a>
       </div>
     </div>
   </header>
 
-  <!-- Sección principal con imagen de fondo -->
+  <!-- Hero principal con video -->
   <section class="hero">
-    <div class="hero-content">
-      <h2>Inspírate en el Louvre</h2>
-      <div class="info">
-        <p>El museo está abierto hoy<br>9:00 - 21:00</p>
-        <button>Reservar una entrada</button>
-        <button>Preparar tu visita</button>
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="https://api-www.louvre.fr/sites/default/files/2024-04/cover-w768-h768-scaled.mp4" type="video/mp4">
+      
+    </video>
+    <div class="hero-overlay">
+      <h1>INSPÍRATE EN EL LOUVRE</h1>
+      <p>El museo está abierto hoy de 9:00 a 21:00</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn">Reservar una entrada</a>
+        <a href="#" class="btn-outline">Preparar tu visita</a>
       </div>
     </div>
   </section>
 
-  <!-- Sección de Lo más destacado -->
+  <!-- Sección destacados -->
   <section class="destacados">
-    <h2>Lo más destacado</h2>
-    <div class="destacados-grid">
-      <div class="item grande">Explora</div>
-      <div class="item mediana">Visita guiada</div>
-    </div>
-    <div class="sub-destacados">
-      <div class="item chica">
-        <p>En familia</p>
+    <h2>LO MÁS DESTACADO</h2>
+    <div class="grid-destacados">
+
+      <!-- Item: El Palacio -->
+      <div class="destacado-item">
+        <div class="etiqueta">Expos</div>
+        <img src="img/el-palacio.jpg" alt="Fotografía del Palacio del Louvre">
+        <h3>EL PALACIO</h3>
+        <p>Una residencia real transformada en el mayor museo del mundo</p>
       </div>
-      <div class="item chica">
-        <p>Obras maestras</p>
+
+      <!-- Item: Bienvenidos al Louvre -->
+      <div class="destacado-item">
+        <div class="etiqueta">Visita guiada</div>
+        <img src="img/bienvenidos-louvre.jpg" alt="Bienvenida al Louvre">
+        <h3>BIENVENIDOS AL LOUVRE</h3>
+        <p>Recorrido guiado para descubrir las obras más legendarias.</p>
       </div>
+
+      <!-- Item: En Familia -->
+      <div class="destacado-item">
+        <div class="etiqueta">En familia</div>
+        <img src="img/en-familia.jpg" alt="Familia visitando el Louvre">
+        <h3>EN FAMILIA</h3>
+        <p>Haz que tu familia descubra el Louvre.</p>
+      </div>
+
+      <!-- Item: Obras Maestras -->
+      <div class="destacado-item">
+        <a href="obras-maestras.html" target="_blank">
+          <div class="etiqueta">Secretos</div>
+          <img src="img/mona-lisa-2.jpg" alt="Obras maestras del Louvre">
+          <h3>OBRAS MAESTRAS</h3>
+          <p>¿Dónde se oculta la Mona Lisa? Lo descubrirás aquí.</p>
+        </a>
+      </div>
+
     </div>
   </section>
 
-  <!-- Sección intermedia (gris oscuro) -->
-  <section class="fondo-gris"></section>
-
-  <!-- Sección de corazón del Louvre -->
-  <section class="corazon-louvre">
-    <h2>Adéntrate en el corazón del Louvre</h2>
+  <!-- Sección El corazón del Louvre -->
+  <section class="corazon-louvre" id="corazon">
+    <h2>El corazón del Louvre</h2>
     <div class="galeria">
-      <div class="obra"></div>
-      <div class="obra"></div>
-      <div class="obra"></div>
+      <div class="obra">
+        <img src="img/obra-julio-cesar.jpg" alt="Escultura de Julio César">
+        <p>Julio César</p>
+      </div>
+      <div class="obra">
+        <img src="img/obra-codigo-hammurabi.jpeg" alt="Piedra del Código de Hammurabi">
+        <p>Código de Hammurabi</p>
+      </div>
+      <div class="obra">
+        <img src="img/obra-venus-milo.jpeg" alt="Escultura de Venus de Milo">
+        <p>Venus de Milo</p>
+      </div>
     </div>
   </section>
 
-  <!-- Sección de Cosas que ver -->
-  <section class="cosas-ver">
-    <h2>Cosas que ver</h2>
+  <!-- Sección Cosas que ver desde casa -->
+  <section class="cosas-ver" id="cosas-ver">
+    <h2>Lo que puedes ver desde casa</h2>
     <div class="videos">
-      <div class="video"></div>
-      <div class="video"></div>
-      <div class="video"></div>
+      <div class="video">
+        <img src="img/recorrido-virtual.jpg" alt="Imagen de recorrido virtual por el Louvre" />
+      </div>
+      <div class="video">
+        <img src="img/video-historia.jpg" alt="Video sobre la historia del Louvre" />
+      </div>
     </div>
   </section>
 
-  <!-- Instagram -->
-  <section class="instagram">
-    <h3>El Louvre en Instagram</h3>
+  <!-- Sección Videos destacados -->
+  <section class="videos-louvre" id="videos-louvre">
+    <h2>COSAS QUE VER</h2>
+
+  <div class="videos-row">
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/..." allowfullscreen></iframe>
+      <div class="video-caption">- Paseo por la colección de camafeos</div>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/..." allowfullscreen></iframe>
+      <div class="video-caption">- La capilla de la mastaba de Ajethetep</div>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/..." allowfullscreen></iframe>
+      <div class="video-caption">- Cuentos de otoño: La uva de Baco</div>
+    </div>
+  </div>
+
+
+    <!-- Indicadores tipo "carousel" -->
+    <div class="carousel-dots">
+      <span class="dot"></span>
+      <span class="dot active"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- Sección Instagram -->
+  <section class="instagram" id="instagram">
+    <h2>#Louvre en Instagram</h2>
     <div class="feed">
-      <div class="post"></div>
-      <div class="post"></div>
-      <div class="post"></div>
-      <div class="post"></div>
+      <img src="img/instagram1.jpeg" alt="Publicación de Instagram 1" class="post">
+      <img src="img/instagram2.jpeg" alt="Publicación de Instagram 2" class="post">
+      <img src="img/instagram3.jpg" alt="Publicación de Instagram 3" class="post">
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h4>Acerca del museo</h4>
+  <footer class="louvre-footer">
+    <div class="footer-container">
+      
+      <!-- Columna: Acerca del Museo -->
+      <div class="footer-column">
+        <h4>ACERCA DEL MUSEO</h4>
         <ul>
-          <li>El Louvre en Francia y en el mundo</li>
-          <li>Reglamento de visita</li>
+          <li><a href="#">El Louvre en Francia y en el mundo</a></li>
+          <li><a href="#">Reglamento de visita</a></li>
+          <li><a href="#">Préstamos y depósitos</a></li>
         </ul>
       </div>
-      <div>
-        <h4>Sitios conexos</h4>
+
+      <!-- Columna: Sitios Conexos -->
+      <div class="footer-column">
+        <h4>SITIOS CONEXOS</h4>
         <ul>
-          <li>Tienda online</li>
-          <li>Taquilla</li>
+          <li><a href="#">Taquilla</a></li>
+          <li><a href="#">Tienda online</a></li>
+          <li><a href="#">Colección</a></li>
+          <li><a href="#">Corpus</a></li>
+          <li><a href="#">Hacer una donación</a></li>
+          <li><a href="#">Sala de prensa</a></li>
         </ul>
       </div>
-      <div>
-        <h4>Soporte</h4>
+
+      <!-- Columna: Soporte -->
+      <div class="footer-column">
+        <h4>SOPORTE</h4>
         <ul>
-          <li>Preguntas frecuentes</li>
-          <li>Contacto</li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Empleo (en francés)</a></li>
+          <li><a href="#">Privatización de espacios</a></li>
+          <li><a href="#">¡Danos tu opinión!</a></li>
         </ul>
       </div>
-      <div>
-        <h4>Síguenos</h4>
-        <div class="social-icons">[Iconos]</div>
+
+      <!-- Columna: Redes Sociales -->
+      <div class="footer-column right">
+        <h4>¡SÍGUENOS!</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+        <h4>HAZTE AMIGO</h4>
+        <div class="amis">
+          <img src="img/logo-amis.png" alt="Logo de Amigos del Louvre" class="amis">
+          <p><a href="#">Ver más (solo en francés) →</a></p>
+        </div>
       </div>
+
+    </div>
+
+    <!-- Footer inferior -->
+    <div class="footer-bottom">
+      <ul>
+        <li><a href="#">Aviso legal</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Créditos</a></li>
+        <li><a href="#">Créditos fotográficos</a></li>
+      </ul>
+      <img src="img/logo-louvre.png" alt="Logo Louvre Footer" class="logo-louvre-footer">
     </div>
   </footer>
+
 </body>
 </html>
